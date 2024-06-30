@@ -1,0 +1,46 @@
+URI, URL, URN: 
+    used to identify resources on the internet. (نستخدمهم عشان نوصل لمكان/ ريسورس معين على الإنترنت)
+
+
+[URL (Uniform Resource Locator)]:
+    -used to identify resources using it's location.
+    -example: http://example.com/resource.
+
+[URN (Uniform Resource Name)]:
+    -used to identify resources using it's name (location-independent resource identifier).
+    -doesn't provide the means to access the resource directly; 
+        instead, it names the resource in a globally unique and persistent way.
+    -example: urn:isbn:0451450523.
+
+
+[URI (Uniform Resource Identifier)]:
+    -used to identify resources using it's name, or it's location.
+    -is a generic term for all types of names and addresses that refer to objects on the web.
+    -any URL is a URI.
+    -any URN is a URI.
+
+
+--------------------------------------------------------------------------------------------------------
+typically we don't use URN, because it is not pre
+
+URL consists of these parts: 
+    1-protocol used to access the resource (such as HTTP, FTP), 
+    
+    2-domain name (such as youtube.com),  
+        -to identify the location of the server you want to access.
+        -you can use ip address for the server instead of it's name.
+    
+    3-(optional) port number: 
+        -telling a server from which port our request is comming and from which should be received,  
+            (e.g. www.example.com:8080).
+        -each protocol has it's default port number,
+            if we don't specify it, it will be the default and it doesn't appear in the URL.
+            (HTTP typically uses port 80, while HTTPS uses port 443).
+    
+    4-(optional) specific path to a specific resource in the server: (e.g. video id or the login page),
+        if you don't write it, it will convert you to the default directory (e.g. index.php).
+
+    5-(optional) Query: provides additional parameters or arguments for the resource, often used in web requests,
+        (e.g. ?key1=value1&key2=value2).
+    
+    6-(optional) Fragmants: Refers to a specific section within the resource (e.g. #advanced-level)
