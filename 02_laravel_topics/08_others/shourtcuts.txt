@@ -1,0 +1,7 @@
+ctrl f          : search in current file
+ctrl shift f    : search in all files
+
+ctrl p          : search in project files
+ctrl shift p    : developer tools 
+
+ctrl b          : open/close sidebar
