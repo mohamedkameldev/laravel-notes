@@ -1,0 +1,25 @@
+[request >> route >> validation >> callback function/ method in controller >> view]:
+    request can be 
+        -get form.
+        -post form.
+        -simple uri (using query string).
+        -laravel uri(contains data in an embedded way).
+
+-----------------------------------------------------------------------------------------------
+[Passing Data from a Link to a Controller]:
+    -if the link has the data in traditional form
+        use the data using $_GET[] array.
+
+    -if the link has the data in laravel form /{id}     {{ url('/category/'.$category->id) }}
+        pass data and retreive it in the request       public function toggleActive(string $id){}. 
+
+[Passing Data from a Form to a Controller]:
+    form(get or post) >> controller:
+        pass the Data and retreive it in the $request or in request().
+
+[Passing Data from a Controller to a view]:    
+    -You can compact data to the view with sending a KEY, VALUE array: 
+    return view('welcome', ['name' => 'Samantha']);
+
+    -Also You can compact data to the view using compact() function, to send variables dirctly:  
+    return view('welcome', compact($name));
