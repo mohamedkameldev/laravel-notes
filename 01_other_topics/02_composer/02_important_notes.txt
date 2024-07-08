@@ -1,0 +1,4 @@
+-Laravel is a package that composer can deal with.
+    (you can install it via composer)
+
+-Composer use Packagist to recognize different packages and their versions.
