@@ -1,0 +1,14 @@
+The Difference between composer.json and composer.lock
+
+composer.json: 
+    -contain package name and version [that should be installed] to run the project.
+    -you can add any packages to it to tell others to install these packages.
+
+composer.lock: 
+    -contain package name and version [that have been already installed] in your project.
+    -Auto-generated using composer (you can't modify it).
+
+    
+vendor: 
+    -folder that contain all files of the external packages and the autoloader file to autoload them.
+        (note: you must require autoloader.php file in your project)
