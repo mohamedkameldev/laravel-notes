@@ -1,0 +1,26 @@
+Composer Commands:
+    [composer init]: 
+        Initilizing a new project,
+        usually u don't need this command, laravel do this command for u.
+
+    [composer require]: 
+        To download an outer package, and install it in your project.
+
+    [composer install]:
+        To install the packages on other project with the [same] versions.
+        preferable if you want to install the versions of the dependencies specified in the composer.lock file.
+
+    [composer update]:
+        To install the packages on other project with the [updated] versions.
+        If you want the latest versions of the dependencies in spite of what is in the composer.lock file
+
+    [composer dump-autoload]:
+        To reload the composer.json file.
+
+    [composer create-project --prefer-dist laravel/laravel laravel]:
+        To  create a new Laravel project
+
+    [composer create-project]:
+        After cloning an existing repo, (which contains a composer.json file), Just run this command.
+        The composer.json file basically indicates the dependencies the app needs.
+        You may also use composer install or composer update.
