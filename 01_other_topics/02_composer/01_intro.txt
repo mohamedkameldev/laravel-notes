@@ -1,0 +1,14 @@
+Composer: Dependancy Manager for PHP
+
+Why to use: 
+1- Autoloading project files.
+
+2- Unify the way to write any package - to prevent conflicts between packages.
+
+3- when install any package via composer: it install it's dependancies automatically.
+
+4- after installing any package via composer: you can upgrade or downgrade it's version.
+
+5- facilitate the way of collaborating in the same project between different developers, 
+    anyone can install or update packages that his teammate have been used.
+
