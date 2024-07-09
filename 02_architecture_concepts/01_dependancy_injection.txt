@@ -1,0 +1,14 @@
+Dependancies: 
+    are the components which depend on each other.
+    e.g. Comments class depend on User class 
+        (which means to create any comment you need to create a user with it)
+
+    There is a big problem in Dependancies: 
+    if you want to change the constructor of the User class, you must edit all of it's dependancies.
+
+
+
+Dependancy Injection: 
+    is a design pattern used in software development to manage dependencies between objects.
+    allows the class to receive its dependencies from an external source rather than creating them itself.
+    This approach promotes loose coupling and enhances the modularity, testability, and maintainability of the code.
