@@ -1,0 +1,64 @@
+Service Provider: 
+    -the central place to configure your application: 
+        (registering service container bindings, event listeners, middleware, and even routes).
+
+    -the central place to configure and bind various services/ classes/ dependancies 
+        (into the service container).
+
+    -you can (register a new service) in the Service Container via (Service Provider).
+        (provide services by adding them to the container).
+    
+    -[Laravel app and all of it's core services are bootstrapped via Service Provider].
+
+
+
+-----------------------------------------------------------------------------------------------------------    
+Each Service Provider has 2 default method register() and boot().
+        -register(): is used for registering new services to the application.
+            Best custom use of register method is implementation of Repository pattern.
+
+        -boot(): is used for the bootstrapping the registered service.
+            This method is called after all other service providers have been registered.
+            Best use case of boot() method is View Composers.
+            (typically we don't need register method - most of our code will be written into boot method).
+
+
+
+-----------------------------------------------------------------------------------------------------------    
+By default, Laravel app contains 5 service providers: 
+    1- (AppServiceProvider): 
+        general-purpose service provider where you can register any application-specific services or bindings.
+        Registering services and bindings that are specific to the application.
+    
+    2- (AuthServiceProvider):
+        Registering authentication and authorization services.
+        Defining policies and gates.
+    
+    3- (BroadcastServiceProvider): 
+        responsible for registering broadcast channels and their authentication callbacks. 
+        It enables real-time event broadcasting.
+        Registering broadcast channels and their authentication logic.
+
+    4- (EventServiceProvider): 
+        responsible for registering event listeners and subscribers. 
+        allows the application to handle events in a decoupled manner.
+        Registering events and their listeners.
+        Defining event subscribers.
+
+    5- (RouteServiceProvider): 
+        Organizes, loads, and configures route files, model bindings, and route-specific logic.
+        helps organize and group routes.
+
+Note: [You can add any service to the AppServiceProvider as it's can be used for anything in the app]
+[but it isn't a good practise, it's better to create a custom Service Provider for each task].
+
+-to add a new Service Provider you must add it's name to the app config file.
+
+
+
+-----------------------------------------------------------------------------------------------------------    
+Examples of using Service Providers: 
+    -[To use Bootstrap instead of using Tailwind CSS: write this method in AppServiceProvider]
+    -[ViewComposer]
+    -[Adding a new Routes file]
+    -[Specify a specific route name that all routes must follow (e.g. 3 chars and 1 number)]
