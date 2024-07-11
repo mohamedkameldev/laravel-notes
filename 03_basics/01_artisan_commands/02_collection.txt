@@ -1,0 +1,99 @@
+[General Commands]: 
+    -php artisan list = php artisan
+    -php artisan about
+    -php artisan env
+    -php artisan serve
+
+--------------------------------------------------------------------------------------------
+[Custome Artisan Commands]:
+    -php artisan make:command SendEmails.
+
+--------------------------------------------------------------------------------------------
+[Routes]:
+    -php artisan route:list
+    -php artisan route:list --path=categories
+
+--------------------------------------------------------------------------------------------
+[Form Request]:
+    -php artisan make:request YourRequestName
+
+--------------------------------------------------------------------------------------------
+[Middlewares]:
+    -php artisan make:middleware JwtMiddleware
+
+--------------------------------------------------------------------------------------------
+[Events]: 
+    php artisan event:generate
+    php artisan make:event PodcastProcessed
+    php artisan make:listener SendPodcastNotification --event=PodcastProcessed
+
+--------------------------------------------------------------------------------------------
+[Resource]:
+    -php artisan make:resource UserResource
+
+--------------------------------------------------------------------------------------------
+[Controllers]:
+    -php artisan make::controller CategoryController
+    -php artisan make:controller Website/UserController
+    -php artisan make:controller Dashboard/UserController
+
+    -php artisan make:controller ProvisionServer --invokable
+
+    -php artisan make:controller PhotoController --resource
+    -php artisan make:controller PhotoController --api
+    -php artisan make:controller API/PhotoController --api
+
+    -php artisan make:controller PhotoController --model=Photo --resource (using route model binding)
+
+    -php artisan make:controller PhotoController --model=Photo --resource --requests
+    
+--------------------------------------------------------------------------------------------
+[Seeding & Factories]:
+    -php artisan make:factory CategoryFactory
+    -php artisan make:seeder Categoryseeder
+
+    -php artisan db:seed
+    -php artisan db:seed --class=CategorySeeder
+    -php artisan db:seed --force  // To force the seeders to run without a prompt
+
+--------------------------------------------------------------------------------------------
+[Migrations]:
+    -php artisan make:migration create_categories_table            --create=categories
+    -php artisan make:migration add_icon_field_to_categories_table --table=categories
+
+    -php artisan migrate:install         Create the migration repository
+    -php artisan migrate:status          Show the status of each migration
+    
+    -php artisan migrate:fresh           Drop all tables and re-run all migrations (useful for completely re-building your database)
+    -php artisan migrate:refresh         Reset and re-run all migrations
+    
+    -php artisan migrate:reset           Rollback all database migrations
+    -php artisan migrate:rollback        Rollback the last database migration   (perform the code that's written in the down() function)
+    -php artisan migrate:rollback  --step=
+    -php artisan migrate:rollback  --batch=
+
+--------------------------------------------------------------------------------------------
+[Models]:
+    -php artisan make::model Category
+        
+    -php artisan make:model Flight -m
+    -php artisan make:model Flight --migration
+
+    -php artisan make:model Flight -c
+    -php artisan make:model Flight --controller
+
+    -php artisan make:model Flight -f
+    -php artisan make:model Flight --factory
+    
+    -php artisan make:model Flight -s
+    -php artisan make:model Flight --seed
+
+    -php artisan make:model Flight --policy  
+
+    -php artisan make:model Flight -crR     (controller - form request - resource)  
+      
+    -php artisan make:model Flight -mfsc    (migration - factory - seeder - controller)
+
+    -php artisan make:model Flight --all    (model - migration - controller - form request - factory - seeder - policy)        
+
+    -php artisan make:model Member --pivot  (generate a pivot table)
