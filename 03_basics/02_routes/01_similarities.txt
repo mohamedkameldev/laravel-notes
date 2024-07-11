@@ -1,0 +1,15 @@
+Route::get('cities', [CityController::class, 'cities']);
+Route::get('cities', [App\Http\Controllers\Api\CityController::class, 'cities']);
+Route::get('cities', ['App\Http\Controllers\Api\CityController', 'cities']);
+Route::get('cities', 'App\Http\Controllers\Api\CityController@cities');
+
+Route::resource('user', UserController::class)->only('index', 'show');
+Route::resource('user', UserController::class)->except('index', 'show');
+Route::resource('user', UserController::class, ['only' => ['index', 'show']]);
+Route::resource('user', UserController::class, ['except' => ['create', 'show']]);
+
+Route::apiResource('/opinions',OpinionController::class, array("as" => "api"));
+
+--------------------------------------------------------------------------------------------------------
+-you can name 2 ROUTES with the same name, but with different methods(get/ post)
+    # resource routes do that by default.
