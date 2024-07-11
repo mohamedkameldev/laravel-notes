@@ -1,0 +1,20 @@
+[Routes Groups]: 
+
+In Route Groups: you can add: 
+    1- Middleware: To assign middleware to all routes within a group (you can add more than middleware).
+    2- Controller: define the common controller for all of the routes within the group.
+    3- Prefixes: to prefix each route in the group with a given URI.
+    4- Name: adding a specific name to all the routes in the group, and then add a name to each one of them.
+    5- Subdomain: allowing you to capture a portion of the subdomain for usage in your route or controller.
+
+
+Route::group(['middleware' => 'auth:sanctum', 'prefix' => 'contact', 'controller' => ContactController::class], function () {
+    Route::get('/', 'index');
+    Route::get('/view/{contact_id}', 'show');
+    Route::post('/delete/{contact_id}', 'destroy');
+});
+
+Route::controller(App\Http\Controllers\Api\VideoController::class)->middleware(['auth:sanctum','verified'])->group(function(){
+    Route::get('/get-video','getVideo')->middleware('canPullVideo');
+    Route::get('/get-videos','getVideos')->middleware('isPurchased');
+});
