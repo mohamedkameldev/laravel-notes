@@ -1,7 +1,7 @@
 1- Shared Hosts: 
     -you can manage your website using [Cpanel].
     -upload your website on [public html folder], clone your repo there,
-        when you add any updates in the development environment pull them in this folder .
+        when you add any updates in the development environment pull them in this folder.
 
 2- VPS and Dedicated Hosts: 
     -it's an empty machine, you must install all tools and packages by yourself.

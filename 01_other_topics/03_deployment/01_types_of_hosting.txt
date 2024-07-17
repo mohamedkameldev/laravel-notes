@@ -12,7 +12,7 @@
    -One hardware can run multiple Machines.
    -the server runs on a VM, so u can change configurations on it.
    -you can do what are you want on your VM.
-   -eg. Amazon - Digital Ocean(cheaper that amazon)
+   -eg. Amazon - Digital Ocean(cheaper than amazon)
         Heroku - Hostinger
 
 
