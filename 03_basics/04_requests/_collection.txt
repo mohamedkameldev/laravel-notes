@@ -1,0 +1,22 @@
+dd($_GET)       // fetch only get fields from the form.
+dd($_POST)      // fetch only post fields from the form.
+
+request()               // the whole object.
+request()->all()        // fetch get and post fields from the form.
+request()->post()       // fetch post fields from the form.
+
+request()->getmethod()
+request()-hasfile('photo')     // true or false.
+request()->path()              // return the path of the comming route.
+request()->url()               // return the FULL path of the comming route.
+request()->fullUrl()           // return the FULL path of the comming route.
+
+request()->has('product_id')            // true or false.
+request()->product_id                   // fetch the selected field only.
+request()->input('product_id')          // fetch the selected field only.
+
+request()->input('name', 'Sally')       // Put a default value to the input.
+request()->input('products.0.name')     // accessing an input from an array.
+
+request()->only('product_id', 'name')    // only fetch the selected fields.
+request()except->('_token')              // fetch all data except the _token.
