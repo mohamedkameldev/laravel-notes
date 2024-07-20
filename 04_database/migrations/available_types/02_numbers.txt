@@ -1,0 +1,45 @@
+(tinyInteger)
+    a 1-byte signed integer, can store values in the range of -128 to 127
+
+(smallInteger)
+    a 2-byte signed integer, can store values in the range of -32,768 to 32,767.
+
+(integer)
+    a 4-byte signed integer, can store values in the range of -2.1 billion to 2.1 billion.
+
+(mediumInteger)
+    not a standard MySQL data type, equivalent to the [integer] type in Laravel.
+
+(bigInteger)
+    an 8-byte signed integer, can store very large values in the range of -9.2 quintillion to 9.2 quintillion.
+
+
+
+(unsignedTinyInteger)
+    an unsigned 1-byte integer, which can store values in the range of 0 to 255.
+
+(unsignedSmallInteger)
+    an unsigned 2-byte integer, which can store values in the range of 0 to 65,535.
+
+(unsignedInteger)
+    an unsigned 4-byte integer, capable of storing values in the range of 0 to approximately 4.3 billion.
+
+(unsignedMediumInteger)
+    not a standard MySQL data type, and it's equivalent to the [unsignedInteger] type in Laravel. 
+
+(unsignedBigInteger)
+    an unsigned 8-byte integer, can store very large non-negative values in the range of 0 to 18.4 quintillion.
+
+
+------------------------------------------------------------------------------------------------------
+
+(double('amount', 8, 2))
+    8 is the total number of digits that can be stored, including integer and decimal parts. 
+    2 represents the number of decimal places.
+    
+(unsignedDecimal('bag_num', 10, 8))
+    indicates that the column will store decimal numbers with an unsigned (non-negative) range.
+
+if you need to store decimal values with a specific precision and scale, unsignedDecimal typically a better choice.
+If you're dealing with general floating-point numbers and don't require precise control over the number of decimal places, you can use double.
+
