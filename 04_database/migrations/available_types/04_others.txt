@@ -1,0 +1,11 @@
+table->enum('difficulty', ['easy', 'hard']);
+    The enum method creates a ENUM equivalent column with the given valid values.
+table->set('flavors', ['strawberry', 'vanilla']);
+    The set method creates a SET equivalent column with the given list of valid values.
+
+    $table->string('pin_code', 6):
+    to store the temporary pin code that reaches to user to activate his email.
+
+$table->rememberToken();
+    The rememberToken method creates a nullable, VARCHAR(100) equivalent column, 
+    that is intended to store the current "remember me" authentication token.
