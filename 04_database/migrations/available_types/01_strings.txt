@@ -1,0 +1,34 @@
+(char('code', 10))
+    fixed-length character column type.
+    always uses the specified length for storage, padding shorter strings with spaces.
+    suitable when you need fixed-length strings.
+    more efficient for searching and sorting compared to VARCHAR because all values have the same length. 
+    however, it may waste storage space if most of your values are shorter than the defined length.
+
+(string('name'))
+(string('name', 10))
+    Equivalent to VARCHAR. 
+    commonly used when you don't need to specify a specific length for your string columns. 
+    a good choice for general text columns when you don't have strict length requirements.
+    by default VARCHAR(255) but you can change it's value,
+
+(lineString('name', 10))
+
+(multiLinestring('name', 10))
+
+------------------------------------------------------------------------------------------------------
+(tinyText('name', 10) )
+    up to 255 characters
+    # usernames, titles, or short descriptions.
+
+(text('name', 10))
+    65,535 characters
+    #  long pieces of text, such as blog posts, comments, or descriptions.
+
+(mediumText('name', 10))
+    up to 16,777,215 characters
+    # long content.
+
+(longText('name', 10))
+    up to 4,294,967,295 characters
+    # full articles, books, or extensive textual content.
