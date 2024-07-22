@@ -1,0 +1,12 @@
+[one to one relationship]:
+    parent: hasone()
+    child: belongsto()
+
+
+[one to many relationship]:
+    parent: hasmany()
+    child: belongsto()
+
+    
+[many to many relationship]:
+    both models: belongsToMany()->withPivot('quantity')
