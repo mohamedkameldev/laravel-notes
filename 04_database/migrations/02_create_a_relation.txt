@@ -1,0 +1,9 @@
+[Relations in Migrations]:
+    -$table->unsignedBigInteger('user_id');
+    -$table->foreign('user_id')->references('id')->on('users');
+
+    (or)
+
+    -$table->foreignId('parent_id')->constrained('categories','id')->cascadeOnDelete();
+    constrained(): 
+        to specify the other table name or the primary key name if it wasn't follow laravel convention.
