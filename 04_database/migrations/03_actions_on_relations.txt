@@ -1,0 +1,37 @@
+when defining a relation, you can specify different actions to be taken when a referenced record is deleted or updated. 
+Here are some of the available options:
+
+[On Delete]: 
+    -cascadeOnDelete(): 
+        when a record in the referenced table is deleted, all related records in the current table will also be deleted automatically.
+
+    -setNullOnDelete(): 
+        set the foreign key column in the current table to null when a record in the referenced table is deleted.
+        It effectively removes the association but doesn't delete the related records.
+        لازم تخلي قيمة العمود ده عند الابن ب null
+
+    -restrictOnDelete(): (the default one)
+        prevent deletion of a record in the referenced table if there are related records in the current table. 
+
+    -noActionOnDelete(): 
+        This option is similar to 'restrictOnDelete()'. 
+        prevents deletion of a record in the referenced table if there are related records in the current table without any cascading or setting to null.
+
+    -setDefaultOnDelete(): 
+        This option will set the foreign key column in the current table to its default value when a record in the referenced table is deleted. 
+        You can specify the default value when defining the column.
+
+
+[On Update]: 
+    -cascadeOnUpdate(): 
+        cause a cascade update, that's mean: 
+        when the primary key of the referenced record is updated, the foreign key values in the current table will also be updated.
+
+    -setNullOnUpdate(): 
+        set the foreign key column in the current table to null when the primary key of the referenced record is updated.
+
+    -noActionOnUpdate(): 
+        prevents updating of the foreign key values in the current table when the primary key of the referenced record is updated.
+
+    -setDefaultOnUpdate(): 
+        set the foreign key column in the current table to its default value when the primary key of the referenced record is updated.
