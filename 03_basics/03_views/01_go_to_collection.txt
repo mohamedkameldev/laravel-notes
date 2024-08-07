@@ -1,11 +1,19 @@
 url('user/profile')
 assest('')
 
+route('route.name')             // take a named route, and returns the url of the route routes itself
+
+redirect('/home')               // take route as a parameter
+
+redirect(route('route.home'))
+redirect()->route('route.home') // redirect() returns an object of redirect class (method chaning)
+Redirect::route('route.home')
+
+to_route('users.show')          // take a named route, and redirect you to this route directly
+
+redirect()->away('https://www.google.com');
+----------------------------------------------------------------------------------------------------
+
 view('auth.login')
 
 back()
-
-redirect('/home')       // redirect you to a specific route
-
-route('route.name')     // take a named route, and returns the routes itself [redirect()->route('route.home')]
-to_route('users.show')  // take a named route, and redirect you to this route directly
