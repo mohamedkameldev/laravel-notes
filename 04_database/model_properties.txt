@@ -1,0 +1,32 @@
+[don't forget the golden rule: [Convention Over Configuration]]...
+
+protected $connection = 'mysql2';
+// لو الموديل ده كان بيشاور على جدول في كونكشن غير ال default connection
+
+protected $table = 'vendors';
+// لو الموديل ده بيشاور على جدول ولكن إنته مش مستخدم ال naming convention
+
+protected $primaryKey = 'Store_Id';
+// لارافيل بتفترض إن أي جدول لازم له برايماري كي، و اسمه id
+// لو إنته عامل اسم غير id لازم تسميه هنا
+
+protected $keyType = 'string';
+// لارافيل بتفترض إن البرايماري كي نوعه دايما حاجه من مشتقات ال int
+// لو إنته بتستخدم حاجه تانيه لازم تعرف الموديل (e.g. UUID is string)
+
+
+// only these 2 properties will be public, any other one will be protected...
+public $increamenting = false;
+// لارافيل بتفترض إن البرايماري كي دايما هيكون auto increamenting
+// لو إنته عامله مش كده لازم تعرف الموديل (e.g. UUID is not auto increamenting)
+
+public $timestamps = false;
+// لارافيل بتفترض إن أي جدول لازم فيه عمودين ال timestamps
+// لو إنته مش حاططهم في الجدول أصلا، عرف الموديل
+// لارافيل مع أي إضافة أو تعديل بتعدل في قيمة العمودين دول،
+// لو إنته ما عرفتهاش إنهم مش موجودين هيطلع لك إيرور
+
+
+public const CREATED_AT = 'created_on';
+public const UPDATED_AT = 'updated_on';
+// لو غيرت في أسماء التايم ستامبس بدل المتعارف عليهم، عرف الموديل عشان يضيف فيهم
