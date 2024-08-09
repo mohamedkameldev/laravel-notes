@@ -1,0 +1,15 @@
+redirect('/home')       // a route
+route('route.name')     // named route
+
+redirect(route('route.home'))
+redirect()->route('route.home') // redirect() returns an object of redirect class (method chaning)
+Redirect::route('route.home')
+
+to_route('users.show')          // redirect to a named route
+
+redirect()->away('https://www.google.com');
+----------------------------------------------------------------------------------------------------
+
+view('auth.login')
+
+back()
