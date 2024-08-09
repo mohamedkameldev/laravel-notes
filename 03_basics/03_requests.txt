@@ -1,0 +1,33 @@
+dd($_GET)       // fetch only get fields from the form.
+dd($_POST)      // fetch only post fields from the form.
+
+request()               // the whole object.
+request()->all()        // fetch get and post fields from the form.
+request()->post()       // fetch post fields from the form.
+
+request()->query('name');    // just from query parameters
+request()->get('name');      // general
+request()->post('name');     // just from post - use it to ensure that if any input has been sended from query string it will NOT be stored.
+request()->input('name');    // general
+request()['name'];
+request()->name;
+
+request()->getmethod()
+request()->path()              // return the path of the comming route.
+request()->url()               // return the FULL path of the comming route.
+request()->fullUrl()           // return the FULL path of the comming route.
+
+request()->has('product_id')        // true or false.
+request()-hasFile('photo')          // true or false(ensure this is really a file).
+request()->product_id               // fetch the selected field only.
+request()->input('product_id')      // fetch the selected field only.
+
+request()->input('name', 'Sally')       // Put a default value to the input.
+request()->input('products.0.name')     // accessing an input from an array.
+
+request()->only('product_id')               // only fetch the selected fields.
+request()->only('product_id', 'name')       // only fetch the selected fields.
+request()->only(['product_id', 'name'])     // only fetch the selected fields.
+request()except->('_token')                 // fetch all data except the _token.
+request()except->('_token', 'image')        // fetch all data except the _token.
+request()except->(['_token', 'image'])      // fetch all data except the _token.
