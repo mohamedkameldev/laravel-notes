@@ -1,0 +1,17 @@
+Route::get($uri, $callback);
+Route::post($uri, $callback);
+Route::put($uri, $callback);
+Route::patch($uri, $callback);
+Route::delete($uri, $callback);
+Route::options($uri, $callback);
+
+Route::resource($uri, $callback);
+Route::apiResource($uri, $callback);
+
+Route::match(['get', 'post'], $callback);
+Route::any('/', $callback);
+
+Route::view('/welcome', 'welcome');
+Route::view('/welcome', 'welcome', ['name' => 'Taylor']);
+
+Route::redirect('/here', '/there', 301); // default status code for it is 302 (if you don't write it)

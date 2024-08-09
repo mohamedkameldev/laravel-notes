@@ -6,6 +6,7 @@ In Route Groups: you can add:
     3- Prefixes: to prefix each route in the group with a given URI.
     4- Name: adding a specific name to all the routes in the group, and then add a name to each one of them.
     5- Subdomain: allowing you to capture a portion of the subdomain for usage in your route or controller.
+    6- as: to add a prefix to the route name.
 
 
 Route::group(['middleware' => 'auth:sanctum', 'prefix' => 'contact', 'controller' => ContactController::class], function () {
