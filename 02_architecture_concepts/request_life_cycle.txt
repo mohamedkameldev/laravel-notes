@@ -1,82 +1,81 @@
--[request >> route >> validation >> method in controller              >> view]
--[request >> route >> validation >> method in controller >> resource  >> json]
-
 01- [Web Server]:
     -user sends an HTTP request to the web server(e.g. Apache, Nginx),
-    -request received by the web server, which forwards it to the PHP interpreter for processing.
     -web server point this request to the Laravel application's (public directory).
 
 
 02- [Public Folder - Document Root]:
     -public folder is the root of the project.
     -in case of using Apache, (.htaccess) will redirect request to (index.php file)
-        .htaccess file: 
-            -helps in managing how the application handles incoming requests.
-            -ensures proper functioning of Laravel's routing system.
-            -you can edit default configurations in .htaccess to make it to redirect request to another file.    
+        (you can edit default configurations in .htaccess to make it to redirect request to another file)    
 
 
 03- [Index.php]:
     -the (entry point) for your Laravel application.
-    -the (starting point) for handling requests in a Laravel application.
-    -all incoming requests (http requests) are directed to this file by the web server.
+    -all incoming requests are directed to this file by the web server.
     -perform essential setup tasks like: 
         1-(loads the Composer autoloader): 
             require __DIR__.'/../vendor/autoload.php';
-            which handles the automatic loading of classes and external packages.
+            which handles the autoloading of classes and external packages.
 
         2-(creating a new instance of Laravel's application - service container): 
             $app = require_once __DIR__.'/../bootstrap/app.php';
             which serves as the service container (IOC container).
         
-        3-(binding important interfaces):
+        3-(binding important interfaces and services form service provider):
             In the bootstrap/app.php file, Laravel binds important interfaces to the application container, 
             such as (the HTTP kernel), (console kernel), and (exception handler).
 
 
-04- [Kernel]:
-    HTTP kernel is responsible for: 
-        1-managing the request and response objects.
-        2-handling middleware.
-            
-        [Middleware] are filters that can perform tasks such as authentication, logging, and more,
-            (before) or (after) the request reaches your application's core logic.
-            (Middlewares are defined in the kernel).
+04- [Kernel (HTTP & Console)]:
+    -kernel is (the core router) of every Laravel application.
+    -responsible for 
+        -taking in a user request, 
+        -processing it through middleware, 
+        -handling exceptions,
+        -passing it to the page router,
+        -then returning the final response.
+
+    -kernel runs all of the bootstraps that need to run before every request, such as: 
+        -running all of the service providers
+        -defines the list of middleware that will wrap each request
+        
 
 
 05- [Service Providers]:
-    Before reaching the actual route handling,
-    Service providers bind services into the service container,
-        (which is essentially Laravel’s way of managing class instances).
-    Service providers are a crucial part of Laravel’s dependency injection and service binding system.
-
+    -contain the code that various components of laravel need to bootstrap theri functionality.
+    -before reaching the actual route handling,
+    -bind services into the service container(Laravel's way of managing class instances).
+    -crucial part of Laravel's dependency injection and service binding system.
 
 06- [Routing]:
     Now, the request enters the routing phase.
     Laravel try to match a route with one of it's routes in web or api file, 
     if it matches, Laravel executes the associated controller method or closure.
 
+07-[Middleware] are filters that can perform tasks such as authentication, logging, and more,
+    (before) or (after) the request reaches your application's core logic.
+    (Middlewares are defined in the kernel).
 
-07- [Controller]:
+08- [Controller]:
     -controller handles the request by 
         1-processing the data, 
         2-interacting with models,
         3-preparing the response. 
     -It acts as the intermediary between the route and the core logic of your application.
 
-08- [Model]:
+09- [Model]:
     -Models represent database tables and provide an elegant way to query and manipulate data. 
     -If the controller needs to fetch or modify data, it typically delegates these tasks to a relevant model.
 
-09- [Response]:
+10- [Response]:
     -after processing the request, controller prepares a response.
     -response can be an HTML view, JSON data, or any other type of HTTP response.
     -Laravel makes it easy to return responses with various HTTP status codes and content types.
 
-10- [Middleware Again]:
+11- [Middleware Again]:
     -Middleware can modify the response before it’s sent to the user,
     -allowing for tasks like adding headers, modifying content, or performing final authentication checks.
 
-11- [Sending the Response]:
+12- [Sending the Response]:
     -sends the response back to the user through the web server.
     -The web server then delivers the response to the client’s browser,
