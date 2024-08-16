@@ -1,9 +1,13 @@
-redirect('/home')       // a route
-route('route.name')     // named route
+response()->redirectTo('/')
 
+redirect('/home')       // takes a route
 redirect(route('route.home'))
 redirect()->route('route.home') // redirect() returns an object of redirect class (method chaning)
+redirect()->back().
 Redirect::route('route.home')
+
+
+route('route.name')     // takes a named route
 
 to_route('users.show')          // redirect to a named route
 
