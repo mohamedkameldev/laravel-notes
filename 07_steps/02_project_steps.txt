@@ -1,0 +1,10 @@
+1- create DB scheme and add it's name in the .env file
+
+2- composing The blade design:      جهز التيمبلت الي هتشتغل عليه
+   -put css, javascript, fonts and images in the assets in the public folder,
+      (next to index file - to be accessable to user).
+      now you can reach to them from any page in the website using absolute path(asset('path')).
+
+   -create the master layout in the views, and then compose other views(extends, section, yeilds).
+
+3- specify what are the tasks that you need to accomplish.
