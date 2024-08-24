@@ -1,0 +1,8 @@
+composer install laravel/breeze --dev
+
+php artisan breeze:install 
+    (Important Tip: Breeze will Override Routes: web.php file)
+
+npm install && npm run dev
+
+composer remove laravel/breeze --dev
