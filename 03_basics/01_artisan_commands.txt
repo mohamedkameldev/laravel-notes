@@ -36,16 +36,9 @@
     -php artisan make::controller CategoryController
     -php artisan make:controller Website/UserController
     -php artisan make:controller Dashboard/UserController
-
-    -php artisan make:controller ProvisionServer --invokable
-
-    -php artisan make:controller PhotoController --resource
-    -php artisan make:controller PhotoController --api
-    -php artisan make:controller API/PhotoController --api
-
-    -php artisan make:controller PhotoController --model=Photo --resource (using route model binding)
-
-    -php artisan make:controller PhotoController --model=Photo --resource --requests
+        --invokable | --resource | --api
+        --model=Photo --resource (using route model binding)
+        --model=Photo --resource --requests
     
 --------------------------------------------------------------------------------------------
 [Seeding & Factories]:
@@ -75,25 +68,8 @@
 --------------------------------------------------------------------------------------------
 [Models]:
     -php artisan make::model Category
-        
-    -php artisan make:model Flight -m
-    -php artisan make:model Flight --migration
-
-    -php artisan make:model Flight -c
-    -php artisan make:model Flight --controller
-
-    -php artisan make:model Flight -f
-    -php artisan make:model Flight --factory
-    
-    -php artisan make:model Flight -s
-    -php artisan make:model Flight --seed
-
-    -php artisan make:model Flight --policy  
-
-    -php artisan make:model Flight -crR     (controller - form request - resource)  
-      
-    -php artisan make:model Flight -mfsc    (migration - factory - seeder - controller)
-
-    -php artisan make:model Flight --all    (model - migration - controller - form request - factory - seeder - policy)        
-
-    -php artisan make:model Member --pivot  (generate a pivot table)
+        -m --migration | -c --controller | -f --factory | -s --seed | --policy
+        -crR     (controller - form request - resource)  
+        -mfsc    (migration - factory - seeder - controller)
+        --all    (model - migration - controller - form request - factory - seeder - policy)        
+        --pivot  (generate a pivot table)
