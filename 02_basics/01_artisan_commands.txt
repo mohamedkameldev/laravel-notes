@@ -73,3 +73,10 @@
         -mfsc    (migration - factory - seeder - controller)
         --all    (model - migration - controller - form request - factory - seeder - policy)        
         --pivot  (generate a pivot table)
+
+--------------------------------------------------------------------------------------------
+[Publishing Vendor Files]:
+
+-php artisan vendor:publish --tag=laravel-pagination
+-php artisan vendor:publish --tag=laravel-notifications
+-php artisan vendor:publish --tag=laravel-mail
