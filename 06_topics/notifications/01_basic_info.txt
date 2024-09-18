@@ -1,0 +1,3 @@
+Notification is a PHP class that represents a single communication that you might want to send to your users.
+
+Each class represents all of the information necessary to send notifications to your users using one or many notification channels.

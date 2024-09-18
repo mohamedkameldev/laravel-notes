@@ -1,17 +1,14 @@
 https://paste.laravel.io/7ec6af34-a9ca-4522-a80b-1b3b40fbd702/raw
 
-
 // env
 
 ONE_SIGNAL_APP_ID=
 ONE_SIGNAL_KEY=
 FIREBASE_API_ACCESS_KEY=AAAAjIuaSn8:APA91bHXFiPE3LUlexfbAIaXpfXasQpjagg8-Y-ciuD4-zfgPM0bfQV2rFBREmPjMRkjB7q3jugEcyUOlf7CFWA-i7Jk0IEcE-JpTn_WOdbPrxC8U72V0ZOHUSLRG8lZ4PXSntw_Rv3T
 
-
 ---------------------------------------------------------------------------------------------------------------------
-[Firebase notification helper]
+[Firebase notification helper]:
 put it in: helpers.php
-
 
 function notifyByFirebase($title, $body, $tokens, $data = [], $is_notification = true)
 {
@@ -72,11 +69,9 @@ function notifyByFirebase($title, $body, $tokens, $data = [], $is_notification =
     return $result;
 }
 
-
 ---------------------------------------------------------------------------------------------------------------------
-[onesignal notification]
+[onesignal notification]:
 put it in: helpers.php
-
 
 function notifyByOneSignal($audience = ['included_segments' => array('All')] , $contents = ['en' => ''] , $data = [])
 {
@@ -101,9 +96,8 @@ function notifyByOneSignal($audience = ['included_segments' => array('All')] , $
     return $response;
 }
 
-
 ---------------------------------------------------------------------------------------------------------------------
-[test notification web service]
+[test notification web service]:
 
 public function testNotification(Request $request)
 {
@@ -134,8 +128,6 @@ public function testNotification(Request $request)
             'send' => json_decode($send)
         ]);
 }
-
-
 
 ---------------------------------------------------------------------------------------------------------------------
 
