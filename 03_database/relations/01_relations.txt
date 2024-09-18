@@ -1,12 +1,16 @@
 [one to one relationship]:
-    parent: hasone()
-    child: belongsto()
+    parent: hasone()        returns record
+    child: belongsto()      returns record
 
 
 [one to many relationship]:
-    parent: hasmany()
-    child: belongsto()
+    parent: hasmany()       returns collection
+    child: belongsto()      returns record
 
     
 [many to many relationship]:
     both models: belongsToMany()->withPivot('quantity')
+
+
+
+-hasDefault(): only used with hasOne() & belongsTo() relations (because they returns just one record).
