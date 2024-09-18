@@ -1,3 +1,20 @@
+Methods that deal with the pivot table:
+    -Inserting: attach() | updateExistingPivot() | syncWithoutDetaching()
+    -Delete: detach()
+    -Update: sync()
+
+    [attach]: insert completely new recore on the pivot table.
+
+    [updateExistingPivot]: update some pivots on an existing record.
+
+    [sync]: delete the old values, and insert the new ones, so we use it in the update.
+
+    [syncWithoutDetaching]: insert the new ones, without deleting the old that don't be passed.
+
+    [detach]: completely remove relations from the pivot table.
+
+-------------------------------------------------------------------------------------------
+
 Fetching data of a pivot table, using one of it's 2 tables: 
     $user = User::find(1);
     foreach ($user->roles as $role)
@@ -6,32 +23,3 @@ Fetching data of a pivot table, using one of it's 2 tables:
     }
 
     $roles = User::find(1)->roles()->orderBy('name')->get();
-
------------------------------------------------------------------------------------
-to add values to pivot table, (pass the 2 ids and the pivot attributes).
-
-Insert: we can't use create(), we will use ATTACH() or updateExistingPivot():
-    To Insert Completely New Recore on the Pivot table:  
-        auth()->user()->cart->products()->attach(
-            #auth()->user()->id,
-            $request['product_id'], 
-            ['quantity'=> $request['quantity']]
-        );
-
-    To update some pivots on an existing Record: 
-        auth()->user()->cart->products()->updateExistingPivot(
-            #auth()->user()->id,         // will be passed automatically
-            $request['product_id'],      // pass it as it is
-            ['quantity'=> $newQuantity]  // pass it as an array
-        );
-
------------------------------------------------------------------------------------
-Delete: we can't use destroy(), we will use DEATACH():
-    auth()->user()->cart->products()->detach($productID);
-
-
------------------------------------------------------------------------------------
-Update: we can't use update(), we will use SYNC():
-    auth()->user()->cart->products()->sync($newQuantities);
-    
-    SYNC() delete the old values, and insert the new ones, so we use it in the update.
