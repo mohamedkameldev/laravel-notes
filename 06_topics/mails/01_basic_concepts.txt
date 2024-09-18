@@ -1,0 +1,13 @@
+[Transactional Emails]: 
+    -system-triggered emails, 
+    -sent automatically to an individual based on a specific action or event they've initiated.
+    -contain important information for the recipient.
+    -e.g. password reset emails, account activation emails, notifications, ...
+
+
+[High-Volume Emails]: 
+    -large quantity of emails sent in bulk, often within a short period of time.
+    -not individually triggered, but sending emails in bulks (hundreds or thousands).
+    -are common for large businesses, e-commerce platforms, and marketing campaigns,
+    -Requires Scalability: needs to send bulk of emails without delays or failures.
+    -Deliverability Concerns: needs to send bulk of emails without being spams.

@@ -1,0 +1,3 @@
+Every mail message in Laravel is an instance of a specific PHP class called a [Mailable].
+
+you can use compination of drivers (use different drivers for different Mailable classes)

@@ -1,0 +1,12 @@
+To test sending emails at your local environment, you can use various tools such as: 
+
+[Logs]: look at the book
+
+[Fake inboxes]:
+    -[Mailtrap]: paid SaaS
+        -designed for developers to capture and test emails sent from their applications.
+        -offers a fake SMTP server that developers can integrate into their applications for testing purposes.
+        -allows you to share your inbox with coworkers and clients
+
+    -[Mailpit]: free
+        -a service you can run on your local machine through Docker

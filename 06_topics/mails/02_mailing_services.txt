@@ -1,0 +1,18 @@
+To send emails in laravel, you can use different drivers such as: 
+    SMTP, Mailgun, Postmark, Amazon SES, and sendmail, ...
+    
+    -[SMTP]: (Simple Mail Transfer Protocol)
+        -commonly used to send automated emails from applications, such as password reset links or notifications.
+        -works with protocols like (POP3) or (IMAP) to ensure that emails are correctly stored and received.
+        -you configure it to connect your Laravel application to an email server (e.g., Gmail, Outlook) to send messages.
+        -basic protocol, you can't depend on it in the transactional or high-volume emails.
+
+
+    -[Mailgun], Postmark, Amazon SES: require external packages to use them.
+        -more complex services.
+        -more convenient with transactional and hith-volume emails.
+        -fast in sending emails.
+        -provide higher limits than SMTP.  
+        -paied services (but some of them provide free terials).
+        -provide additioanl features like: detailed analytics (open rates, clicks, etc.), email tracking.
+        -Each service has its own strengths depending on your application's needs (volume, deliverability, cost, etc.).
