@@ -1,0 +1,10 @@
+PascalCase or StudlyCaps
+
+camelCase
+
+snake_case
+SCREAMING_SNAKE_CASE
+
+kebab-case
+SCREAMING-KEBAB-CASE
+   (can't be used it in php and other programming languages; '-' is a special character)
