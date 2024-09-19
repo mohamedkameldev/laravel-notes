@@ -1,0 +1,31 @@
+[Fortify]: 
+    -headless authentication package,
+    -just have the backend code, you can custom responses as you want (front or apis).
+    -stateful authentication, two-factor authentication, and password resets.
+-------------------------------------------------------------------------------------------------------------------
+
+
+[UI]: very primitive solution - no longer used.
+
+[Breeze]: 
+    -uses Blade or Inertia.js with Vue.
+    -registration, login, password reset, email verification, and password confirmation.
+
+[Jetstream]: (full-features)
+    -more robust package,
+    -provides scaffolding for login, registration, email verification, two-factor authentication, session management, and optional team management,
+    -provides API support via Laravel Sanctum.
+
+[Socialite]: handles OAuth authentication for social networks.
+-------------------------------------------------------------------------------------------------------------------
+
+
+[Sanctum]: (Laravel-specific )
+    -provides a simple token-based API authentication system,
+
+[Passport]:
+    -provides a full OAuth2 server implementation,
+    -more advanced than Sanctum and is suitable for complex API authentication needs.
+
+[JWT]: (general-purpose solution)
+    -used for complex use cases where stateless, scalable, and secure token-based authentication is required.
